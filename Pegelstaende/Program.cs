@@ -47,11 +47,15 @@ namespace Pegelstaende
             HtmlDocument doc = web.Load(url);
             try
             {
-                return doc.DocumentNode.SelectNodes(
-                   "/table/tbody/tr/td[1]")[1].InnerText;
+                HtmlNodeCollection hmnodes = doc.DocumentNode.SelectNodes(
+                   "/table/tbody/tr/td");
+                foreach (HtmlNode hmnode in hmnodes)
+                {
+                    Console.WriteLine(hmnode.InnerText);
+                }
+                return "";
             }
             catch(Exception e) { return e.Message; }
-           // / html / body / table / tbody / tr[1]
         }
     }
 }
