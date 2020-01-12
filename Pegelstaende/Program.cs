@@ -11,7 +11,7 @@ namespace Pegelstaende
         static void Main(string[] args)
         {
             CollectInformationTagliamento Taglia = new CollectInformationTagliamento();
-            Console.WriteLine(Taglia.Pegel[1].Level);
+            Console.WriteLine(Taglia.Pegel[3].Date>Taglia.Pegel[2].Date);
         }
     }
 }
