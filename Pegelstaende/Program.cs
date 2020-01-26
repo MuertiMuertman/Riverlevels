@@ -11,7 +11,10 @@ namespace Pegelstaende
         static void Main(string[] args)
         {
             CollectInformationTagliamento Taglia = new CollectInformationTagliamento();
-            Console.WriteLine(Taglia.Pegel[3].Date>Taglia.Pegel[2].Date);
+            Boolean WriteSuccess;
+            WriteSuccess = SaveDataToFile.WriteData
+                (Taglia.Pegel, Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            Console.WriteLine(WriteSuccess);
         }
     }
 }
