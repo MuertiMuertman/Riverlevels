@@ -13,7 +13,7 @@ namespace Pegelstaende
             CollectInformationTagliamento Taglia = new CollectInformationTagliamento();
             Boolean WriteSuccess;
             WriteSuccess = SaveDataToFile.WriteData
-                (Taglia.Pegel, Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+                (Taglia.Pegel, $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende");
             Console.WriteLine(WriteSuccess);
         }
     }

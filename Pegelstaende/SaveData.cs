@@ -10,11 +10,12 @@ namespace Pegelstaende
         {
             try
             {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter($"{filepath}\\pegel.txt", true))
+                Console.WriteLine(filepath);
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter($"{filepath}/pegel.txt", true))
                 { 
                     foreach ((DateTime Date, string Level) tplPegel in Pegel)
                     {
-                        file.Write($"{tplPegel.Date};{tplPegel.Level}\n");
+                        file.Write($"{tplPegel.Date.ToString("dd.MM.yyyy HH:mm:ss")};{tplPegel.Level}\n");
                     }    
                 }
                 return true;
