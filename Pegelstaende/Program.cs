@@ -13,6 +13,7 @@ namespace Pegelstaende
         {
             List<ICollectInformation> Fluesse = new List<ICollectInformation>();
             Fluesse.Add(new CollectInformationTagliamento());
+            Fluesse.Add(new CollectInformationPiave());
             Boolean WriteSuccess;
             foreach(ICollectInformation Fluss in Fluesse)
             {
