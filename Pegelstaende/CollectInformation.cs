@@ -5,9 +5,15 @@ using System.Text;
 
 namespace Pegelstaende
 {
-    public class CollectInformationTagliamento
+    public interface ICollectInformation
     {
-        public List<(DateTime Date, string Level)> Pegel;
+        public List<(DateTime Date, string Level)> Pegel { get; }
+        public string Flussname { get; }
+    }
+    public class CollectInformationTagliamento : ICollectInformation
+    {
+        public List<(DateTime Date, string Level)> Pegel { get; }
+        public string Flussname { get { return "Tagliamento"; } }
         public CollectInformationTagliamento()
         {
             Pegel = getLevelInformation();
@@ -34,5 +40,12 @@ namespace Pegelstaende
                 return ListofLevels; 
             }
         }
+    }
+    public class CollectInformationPiave : ICollectInformation
+    {
+        public List<(DateTime Date, string Level)> Pegel => throw new NotImplementedException();
+
+        public string Flussname { get { return "Piave"; } }
+
     }
 }

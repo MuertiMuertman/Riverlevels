@@ -6,12 +6,12 @@ namespace Pegelstaende
 {
     public static class SaveDataToFile
     {
-        public  static Boolean WriteData(List<(DateTime Date, string Level)> Pegel, string filepath)
+        public  static Boolean WriteData(List<(DateTime Date, string Level)> Pegel, string filename)
         {
             try
             {
-                Console.WriteLine(filepath);
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter($"{filepath}/pegel.txt", true))
+                Console.WriteLine(filename);
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter($"{filename}", true))
                 { 
                     foreach ((DateTime Date, string Level) tplPegel in Pegel)
                     {
