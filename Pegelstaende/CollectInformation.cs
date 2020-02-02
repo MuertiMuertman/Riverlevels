@@ -63,8 +63,10 @@ namespace Pegelstaende
                    "//*[@id='datiidrometeo']/table/tr/td");
                 for (int i = 0; i < hmnodes.Count; i = i + 3)
                 {
-                    ListofLevels.Add((DateTime.Parse($"{hmnodes[i].InnerText} {hmnodes[i+1].InnerText}"), hmnodes[i + 2].InnerText));
-                    Console.WriteLine(ListofLevels.Last().Date);
+                    ListofLevels.Add
+                        ((DateTime.Parse($"{hmnodes[i].InnerText} {hmnodes[i+1].InnerText}",
+                            System.Globalization.CultureInfo.CreateSpecificCulture("de-DE")),
+                        hmnodes[i + 2].InnerText));
                 }
                 ListofLevels.Reverse();
                 return ListofLevels;
