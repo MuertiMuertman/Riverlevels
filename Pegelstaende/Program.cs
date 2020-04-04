@@ -15,13 +15,18 @@ namespace Pegelstaende
             Fluesse.Add(new CollectInformationTagliamento());
             Fluesse.Add(new CollectInformationPiave());
             Boolean WriteSuccess;
-            foreach(ICollectInformation Fluss in Fluesse)
+            foreach (ICollectInformation Fluss in Fluesse)
             {
                 WriteSuccess = SaveDataToFile.WriteData
                     (Fluss.Pegel,
                     $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/{Fluss.Flussname}.txt");
                 Console.WriteLine(WriteSuccess);
             }
+            //List<(DateTime Date, double Level)> ListeEingelesen = SaveDataToFile.ReadDatafromFile(
+            //        $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/Tagliamento.txt");
+            //SaveDataToFile.WriteData
+            //        (ListeEingelesen,
+            //        $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/Tagliamento2.txt");
         }
     }
 }
