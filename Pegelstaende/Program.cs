@@ -22,11 +22,6 @@ namespace Pegelstaende
                     $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/{Fluss.Flussname}.txt");
                 Console.WriteLine(WriteSuccess);
             }
-            //List<(DateTime Date, double Level)> ListeEingelesen = SaveDataToFile.ReadDatafromFile(
-            //        $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/Tagliamento.txt");
-            //SaveDataToFile.WriteData
-            //        (ListeEingelesen,
-            //        $"{Environment.GetFolderPath(Environment.SpecialFolder.Personal)}/Pegelstaende/Tagliamento2.txt");
         }
     }
 }
