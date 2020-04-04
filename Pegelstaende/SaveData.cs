@@ -34,7 +34,7 @@ namespace Pegelstaende
             }
             
         }
-        static List<(DateTime Date, double Level)> ReadDatafromFile(string filename)
+        private static List<(DateTime Date, double Level)> ReadDatafromFile(string filename)
         {
             var lines = System.IO.File.ReadLines(filename);
             List<(DateTime Date, double Level)> ListeDaten = new List<(DateTime Date, double Level)>();
